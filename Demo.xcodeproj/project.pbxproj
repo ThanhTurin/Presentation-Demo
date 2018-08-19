@@ -47,7 +47,7 @@
 		072D6D9D21297E7E00B639F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072D6DA021297E7E00B639F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072D6DA221297E7E00B639F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		072D6DA721297E7E00B639F5 /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		072D6DA721297E7E00B639F5 /* Demo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		072D6DAB21297E7E00B639F5 /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
 		072D6DAD21297E7E00B639F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A9CFBE2129C6A7003A9268 /* Demo-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				072D6D9321297E7B00B639F5 /* Demo-iOS.app */,
-				072D6DA721297E7E00B639F5 /* DemoTests.xctest */,
+				072D6DA721297E7E00B639F5 /* Demo-iOSTests.xctest */,
 				07A9CFBE2129C6A7003A9268 /* Demo-tvOS.app */,
 				07A9CFCE2129C6AA003A9268 /* Demo-tvOSTests.xctest */,
 			);
@@ -273,9 +273,9 @@
 			productReference = 072D6D9321297E7B00B639F5 /* Demo-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		072D6DA621297E7E00B639F5 /* DemoTests */ = {
+		072D6DA621297E7E00B639F5 /* Demo-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 072D6DB321297E7E00B639F5 /* Build configuration list for PBXNativeTarget "DemoTests" */;
+			buildConfigurationList = 072D6DB321297E7E00B639F5 /* Build configuration list for PBXNativeTarget "Demo-iOSTests" */;
 			buildPhases = (
 				82BD9F6EEE14AFCBE0EF7690 /* [CP] Check Pods Manifest.lock */,
 				072D6DA321297E7E00B639F5 /* Sources */,
@@ -287,9 +287,9 @@
 			dependencies = (
 				072D6DA921297E7E00B639F5 /* PBXTargetDependency */,
 			);
-			name = DemoTests;
+			name = "Demo-iOSTests";
 			productName = DemoTests;
-			productReference = 072D6DA721297E7E00B639F5 /* DemoTests.xctest */;
+			productReference = 072D6DA721297E7E00B639F5 /* Demo-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		07A9CFBD2129C6A7003A9268 /* Demo-tvOS */ = {
@@ -367,7 +367,7 @@
 			projectRoot = "";
 			targets = (
 				072D6D9221297E7B00B639F5 /* Demo-iOS */,
-				072D6DA621297E7E00B639F5 /* DemoTests */,
+				072D6DA621297E7E00B639F5 /* Demo-iOSTests */,
 				07A9CFBD2129C6A7003A9268 /* Demo-tvOS */,
 				07A9CFCD2129C6AA003A9268 /* Demo-tvOSTests */,
 			);
@@ -646,14 +646,16 @@
 			baseConfigurationReference = 9285ED8042661932C7A7FFF8 /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/iOS/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "thanhturin.Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = thanhturin.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -664,14 +666,16 @@
 			baseConfigurationReference = 2C15F94CAA6426157CB5BC56 /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/iOS/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "thanhturin.Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = thanhturin.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -694,7 +698,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo-iOS.app/Demo-iOS";
 			};
 			name = Debug;
 		};
@@ -715,7 +719,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo-iOS.app/Demo-iOS";
 			};
 			name = Release;
 		};
@@ -724,14 +728,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/tvOS/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "thanhturin.Demo-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = thanhturin.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -744,14 +750,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/tvOS/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "thanhturin.Demo-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = thanhturin.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -824,7 +832,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		072D6DB321297E7E00B639F5 /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
+		072D6DB321297E7E00B639F5 /* Build configuration list for PBXNativeTarget "Demo-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				072D6DB421297E7E00B639F5 /* Debug */,
