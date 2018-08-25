@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A8B04117E418C537D20A74E953BFC8CD"
-               BuildableName = "Pods_Demo_tvOS.framework"
-               BlueprintName = "Pods-Demo-tvOS"
+               BlueprintIdentifier = "17D2234562438D6FA9B3DAC359DA867D"
+               BuildableName = "SwiftyJSON.framework"
+               BlueprintName = "SwiftyJSON-iOS"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A8B04117E418C537D20A74E953BFC8CD"
-            BuildableName = "Pods_Demo_tvOS.framework"
-            BlueprintName = "Pods-Demo-tvOS"
+            BlueprintIdentifier = "17D2234562438D6FA9B3DAC359DA867D"
+            BuildableName = "SwiftyJSON.framework"
+            BlueprintName = "SwiftyJSON-iOS"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

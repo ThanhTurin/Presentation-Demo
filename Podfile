@@ -1,7 +1,12 @@
 use_frameworks!
 
-target 'Demo-iOS' do
+def sharable_pods
   pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON', '~> 3.1'
+end
+
+target 'Demo-iOS' do
+  sharable_pods
 
   target 'Demo-iOSTests' do
     inherit! :search_paths
@@ -10,7 +15,7 @@ target 'Demo-iOS' do
 end
 
 target 'Demo-tvOS' do
-  pod 'Alamofire', '~> 4.7'
+  sharable_pods
 
   target 'Demo-tvOSTests' do
     inherit! :search_paths
