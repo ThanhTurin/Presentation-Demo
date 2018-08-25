@@ -1,6 +1,6 @@
 //
 //  VideoCollectionViewCell.swift
-//  Demo
+//  Demo-iOS
 //
 //  Created by Thanh Turin on 8/25/18.
 //  Copyright © 2018 Thanh Turin. All rights reserved.
@@ -41,8 +41,6 @@ class VideoCollectionViewCell: UICollectionViewCell {
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = false
-    imageView.backgroundColor = UIColor.red
-    imageView.layer.cornerRadius = 4.0
     return imageView
   }()
   override init(frame: CGRect) {

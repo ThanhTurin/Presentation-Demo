@@ -1,6 +1,6 @@
 //
 //  HomeViewController.swift
-//  Demo
+//  Demo-iOS
 //
 //  Created by Thanh Turin on 8/19/18.
 //  Copyright © 2018 Thanh Turin. All rights reserved.
