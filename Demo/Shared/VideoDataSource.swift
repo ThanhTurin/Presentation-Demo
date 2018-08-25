@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol VideoDataSourceDelegate: AnyObject {
+  func videoDataSource(_ dataSource: VideoDataSource, sizeForItemAt indexPath: IndexPath) -> CGSize
+  func videoDataSource(_ dataSource: VideoDataSource, didSelect video: Video)
+}
+
 final class VideoDataSource: NSObject {
 
-  var videos: [Video]!
+  var videos = [Video]()
+  weak var delegate: VideoDataSourceDelegate?
 
-  func registerCells(collectionView: UICollectionView) {
+  func registerCells(for collectionView: UICollectionView) {
     collectionView.register(VideoCollectionViewCell.self, forCellWithReuseIdentifier: VideoCollectionViewCell.reuseIdentifier)
   }
 
@@ -45,11 +51,16 @@ extension VideoDataSource: UICollectionViewDataSource {
 extension VideoDataSource: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//    let cellHeight = (collectionView.frame.size.height - minimumInteritemSpacing * (CGFloat(numberOfRows) - 1) - collectionView.contentInset.top - collectionView.contentInset.bottom) / CGFloat(numberOfRows)
-//    let cellLabelHeights: CGFloat = 100
-//    let cellWidth = (cellHeight - cellLabelHeights) * 16.0 / 9.0
-//    return CGSize(width: cellWidth, height: cellHeight)
+    guard let delegate = delegate else {
+      return CGSize.zero
+    }
+    return delegate.videoDataSource(self, sizeForItemAt: indexPath)
   }
+
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    delegate?.videoDataSource(self, didSelect: videos[indexPath.row])
+  }
+
 
 //  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 //    let preloadIndexPadding = 5
@@ -60,10 +71,5 @@ extension VideoDataSource: UICollectionViewDelegateFlowLayout {
 //    }
 //  }
 
-//  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    if let resource = resourceCollection.resources[safe: indexPath.row] {
-//      delegate?.resourceCollectionDataSource(self, didSelectItem: resource)
-//    }
-//  }
 }
 

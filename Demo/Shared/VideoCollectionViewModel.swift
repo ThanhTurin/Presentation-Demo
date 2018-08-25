@@ -12,12 +12,12 @@ final class VideoCollectionViewModel {
 
   let title: String
   let subtitle: String
-  let imageURL: String
+  let imageURL: URL
 
   init(_ video: Video) {
     self.title = video.title
     self.subtitle = video.description
-    self.imageURL = video.imageURL
+    self.imageURL = URL(string: video.imageURL)!
   }
 
 }
