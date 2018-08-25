@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Demo
 //
 //  Created by Thanh Turin on 8/19/18.
@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
   private lazy var dataSource: VideoDataSource = {
     let dataSource = VideoDataSource()
@@ -64,11 +65,25 @@ class ViewController: UIViewController {
 
     NSLayoutConstraint.activate(constraints)
   }
+
+  private func playVideo(_ video: Video) {
+    guard let videoURL = URL(string: video.mediaURL) else {
+      return
+    }
+
+    let playerViewController = AVPlayerViewController()
+    playerViewController.player = AVPlayer(url: videoURL)
+
+    present(playerViewController, animated: true) {
+      playerViewController.player?.play()
+    }
+  }
+
 }
 
-extension ViewController: VideoDataSourceDelegate {
+extension HomeViewController: VideoDataSourceDelegate {
   func videoDataSource(_ dataSource: VideoDataSource, didSelect video: Video) {
-    print(video)
+    playVideo(video)
   }
 
   func videoDataSource(_ dataSource: VideoDataSource, sizeForItemAt indexPath: IndexPath) -> CGSize {
