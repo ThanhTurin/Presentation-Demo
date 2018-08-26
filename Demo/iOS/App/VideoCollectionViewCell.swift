@@ -7,17 +7,22 @@
 //
 
 import UIKit
-import AlamofireImage
 
 class VideoCollectionViewCell: UICollectionViewCell {
 
   static let reuseIdentifier = "VideoCollectionViewCell"
 
-  var viewModel: VideoCollectionViewModel! {
+  var viewModel: VideoCollectionViewModel? {
     didSet {
-      titleLabel.text = viewModel.title
-      subtitleLabel.text = viewModel.subtitle
-      imageView.af_setImage(withURL: viewModel.imageURL)
+      if let viewModel = viewModel {
+        isHidden = false
+        titleLabel.text = viewModel.title
+        subtitleLabel.text = viewModel.subtitle
+        imageView.setImage(with: viewModel.imageURL)
+      }
+      else {
+        isHidden = true
+      }
     }
   }
 
@@ -51,6 +56,11 @@ class VideoCollectionViewCell: UICollectionViewCell {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setupViews()
+  }
+
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    viewModel = nil
   }
 
   private func setupViews() {

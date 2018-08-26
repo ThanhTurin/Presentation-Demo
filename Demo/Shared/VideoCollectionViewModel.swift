@@ -12,12 +12,13 @@ final class VideoCollectionViewModel {
 
   let title: String
   let subtitle: String
-  let imageURL: URL
+  let imageURL: URL?
 
   init(_ video: Video) {
     self.title = video.title
     self.subtitle = video.description
-    self.imageURL = URL(string: video.imageURL)!
+    let resourcePath = "https://devimages-cdn.apple.com/wwdc-services/images/42/" + video.staticContentId + "/" + video.staticContentId + "_wide_900x506_1x.jpg"
+    self.imageURL = URL(string: resourcePath)
   }
 
 }

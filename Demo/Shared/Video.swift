@@ -17,10 +17,6 @@ final class Video {
   let mediaURL: String
   let staticContentId: String
 
-  var imageURL: String {
-    return "https://devimages-cdn.apple.com/wwdc-services/images/42/" + staticContentId + "/" + staticContentId + "_wide_900x506_1x.jpg"
-  }
-
   init(_ json: JSON) {
     self.id = json["id"].stringValue
     self.title = json["title"].stringValue

@@ -13,6 +13,8 @@
 		072D6D9E21297E7E00B639F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072D6D9D21297E7E00B639F5 /* Assets.xcassets */; };
 		072D6DA121297E7E00B639F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072D6D9F21297E7E00B639F5 /* LaunchScreen.storyboard */; };
 		072D6DAC21297E7E00B639F5 /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D6DAB21297E7E00B639F5 /* DemoTests.swift */; };
+		077D9B942132AE9A00D01919 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D9B932132AE9A00D01919 /* UIImageView+URL.swift */; };
+		077D9B952132AF5700D01919 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D9B932132AE9A00D01919 /* UIImageView+URL.swift */; };
 		07A9CFC12129C6A7003A9268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9CFC02129C6A7003A9268 /* AppDelegate.swift */; };
 		07A9CFC32129C6A7003A9268 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9CFC22129C6A7003A9268 /* HomeViewController.swift */; };
 		07A9CFC62129C6A7003A9268 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A9CFC42129C6A7003A9268 /* Main.storyboard */; };
@@ -65,6 +67,7 @@
 		072D6DA721297E7E00B639F5 /* Demo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		072D6DAB21297E7E00B639F5 /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
 		072D6DAD21297E7E00B639F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		077D9B932132AE9A00D01919 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		07A9CFBE2129C6A7003A9268 /* Demo-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A9CFC02129C6A7003A9268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07A9CFC22129C6A7003A9268 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 				07F7E926213132B600CDFD14 /* VideoAPI.swift */,
 				07F7E92921313D2C00CDFD14 /* VideoDataSource.swift */,
 				07F7E92F21313EAD00CDFD14 /* VideoCollectionViewModel.swift */,
+				077D9B932132AE9A00D01919 /* UIImageView+URL.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -586,6 +590,7 @@
 			files = (
 				07F7E92D21313D5F00CDFD14 /* VideoCollectionViewCell.swift in Sources */,
 				072D6D9921297E7B00B639F5 /* HomeViewController.swift in Sources */,
+				077D9B942132AE9A00D01919 /* UIImageView+URL.swift in Sources */,
 				07F7E93021313EAD00CDFD14 /* VideoCollectionViewModel.swift in Sources */,
 				07F7E92121312FE100CDFD14 /* Video.swift in Sources */,
 				07F7E927213132B600CDFD14 /* VideoAPI.swift in Sources */,
@@ -608,6 +613,7 @@
 			files = (
 				07A9CFC32129C6A7003A9268 /* HomeViewController.swift in Sources */,
 				07F7E93121313EAD00CDFD14 /* VideoCollectionViewModel.swift in Sources */,
+				077D9B952132AF5700D01919 /* UIImageView+URL.swift in Sources */,
 				07F7E92221312FE100CDFD14 /* Video.swift in Sources */,
 				07F7E928213132B600CDFD14 /* VideoAPI.swift in Sources */,
 				07A9CFC12129C6A7003A9268 /* AppDelegate.swift in Sources */,
