@@ -12,22 +12,43 @@ import SwiftyJSON
 
 struct VideoAPIRequestPayload {
   let page: Int
-  let limit: Int
+  let limitPerPage: Int
+
+  func getParameters() -> [String: Any] {
+    return ["page": page, "limitPerPage": limitPerPage]
+  }
+}
+
+enum VideoAPIResponsePayload {
+  case success(hasMore: Bool, videos: [Video])
+  case failure
 }
 
 class VideoAPI {
 
-  class func getVideo(with parameters: [String: Any]? = nil, completions: (([Video]) -> Void)?) {
+  static let shared = VideoAPI()
+
+  func getVideo(with payload: VideoAPIRequestPayload, completions: ((VideoAPIResponsePayload) -> Void)?) {
+    let parameters = payload.getParameters()
+
     Alamofire.request("https://api2018.wwdc.io/videos", method: .get, parameters: parameters)
       .responseJSON { (response) in
-        guard response.result.isSuccess else { return }
-        guard let listVideoRawData = response.result.value as? [Any] else { return }
-        var videos = [Video]()
-        for videoRawData in listVideoRawData {
-          let videoJSON = JSON(videoRawData)
-          videos.append(Video(videoJSON))
+        guard let resultValue = response.result.value as? [String: Any] else {
+          completions?(.failure)
+          return
         }
-        completions?(videos)
+
+        let hasMore = (resultValue["hasMore"] as? Bool) ?? false
+
+        var videos = [Video]()
+        if let listVideoRawData = resultValue["videos"] as? [Any] {
+          for videoRawData in listVideoRawData {
+            let videoJSON = JSON(videoRawData)
+            videos.append(Video(videoJSON))
+          }
+        }
+
+        completions?(VideoAPIResponsePayload.success(hasMore: hasMore, videos: videos))
     }
   }
 

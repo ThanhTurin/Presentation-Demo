@@ -11,7 +11,7 @@ default_platform(:ios)
     desc "Run all unit tests"
     lane :test do
       scan(scheme: scheme)
-      # puts "Thanh"
+      clean_build_artifacts
     end
 
   end

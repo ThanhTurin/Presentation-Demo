@@ -11,15 +11,41 @@ import UIKit
 protocol VideoDataSourceDelegate: AnyObject {
   func videoDataSource(_ dataSource: VideoDataSource, sizeForItemAt indexPath: IndexPath) -> CGSize
   func videoDataSource(_ dataSource: VideoDataSource, didSelect video: Video)
+  func videoDataSource(_ dataSource: VideoDataSource, didRetrivedData videos: [Video])
 }
 
 final class VideoDataSource: NSObject {
 
-  var videos = [Video]()
+  private var hasMore = true
+  private var videos = [Video]()
   weak var delegate: VideoDataSourceDelegate?
+  private let videoAPI: VideoAPI
+  private var currentPage: Int = 1
+  private let limitPerPage = 10
+
+  init(videoAPI: VideoAPI = VideoAPI.shared) {
+    self.videoAPI = videoAPI
+  }
 
   func registerCells(for collectionView: UICollectionView) {
     collectionView.register(VideoCollectionViewCell.self, forCellWithReuseIdentifier: VideoCollectionViewCell.reuseIdentifier)
+  }
+
+  func fetchData() {
+    let requestPayload = VideoAPIRequestPayload(page: currentPage, limitPerPage: limitPerPage)
+
+    videoAPI.getVideo(with: requestPayload) { [weak self] (response) in
+      guard let strongSelf = self else { return }
+      switch response {
+      case .success(hasMore: let hasMore, videos: let videos):
+        strongSelf.hasMore = hasMore
+        strongSelf.videos += videos
+        strongSelf.delegate?.videoDataSource(strongSelf, didRetrivedData: videos)
+
+      case .failure:
+        strongSelf.hasMore = false
+      }
+    }
   }
 
 }

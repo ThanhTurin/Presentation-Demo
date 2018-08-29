@@ -37,19 +37,12 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    registerCollectionView()
-    fetchData()
+    setupDataSource()
   }
 
-  private func registerCollectionView() {
+  private func setupDataSource() {
     dataSource.registerCells(for: collectionView)
-  }
-
-  private func fetchData() {
-    VideoAPI.getVideo { (videos) in
-      self.dataSource.videos = videos
-      self.collectionView.reloadData()
-    }
+    dataSource.fetchData()
   }
 
   private func setupView() {
@@ -91,6 +84,10 @@ extension HomeViewController: VideoDataSourceDelegate {
     let cellLabelsHeights: CGFloat = 70
     let height = width * 9.0 / 16.0 + cellLabelsHeights
     return CGSize(width: width, height: height)
+  }
+
+  func videoDataSource(_ dataSource: VideoDataSource, didRetrivedData videos: [Video]) {
+    collectionView.reloadData()
   }
 
 }

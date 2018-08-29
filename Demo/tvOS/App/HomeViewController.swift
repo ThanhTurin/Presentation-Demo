@@ -37,19 +37,16 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    registerCollectionView()
-    fetchData()
+    setupDataSource()
+  }
+
+  private func setupDataSource() {
+    dataSource.registerCells(for: collectionView)
+    dataSource.fetchData()
   }
 
   private func registerCollectionView() {
     dataSource.registerCells(for: collectionView)
-  }
-
-  private func fetchData() {
-    VideoAPI.getVideo { (videos) in
-      self.dataSource.videos = videos
-      self.collectionView.reloadData()
-    }
   }
 
   private func setupView() {
@@ -82,6 +79,10 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: VideoDataSourceDelegate {
+  func videoDataSource(_ dataSource: VideoDataSource, didRetrivedData videos: [Video]) {
+    collectionView.reloadData()
+  }
+
   func videoDataSource(_ dataSource: VideoDataSource, didSelect video: Video) {
     playVideo(video)
   }
