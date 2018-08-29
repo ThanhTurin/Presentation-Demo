@@ -16,14 +16,20 @@ protocol VideoDataSourceDelegate: AnyObject {
 
 final class VideoDataSource: NSObject {
 
-  private var hasMore = true
+  private weak var delegate: VideoDataSourceDelegate?
+
+  private var shouldLoadMore = true
   private var videos = [Video]()
-  weak var delegate: VideoDataSourceDelegate?
+
   private let videoAPI: VideoAPI
   private var currentPage: Int = 1
   private let limitPerPage = 10
+  private var isLoading: Bool = false
 
-  init(videoAPI: VideoAPI = VideoAPI.shared) {
+  init(delegate: VideoDataSourceDelegate?,
+       videoAPI: VideoAPI = VideoAPI.shared
+    ) {
+    self.delegate = delegate
     self.videoAPI = videoAPI
   }
 
@@ -32,20 +38,30 @@ final class VideoDataSource: NSObject {
   }
 
   func fetchData() {
+    isLoading = true
+
     let requestPayload = VideoAPIRequestPayload(page: currentPage, limitPerPage: limitPerPage)
-
     videoAPI.getVideo(with: requestPayload) { [weak self] (response) in
-      guard let strongSelf = self else { return }
-      switch response {
-      case .success(hasMore: let hasMore, videos: let videos):
-        strongSelf.hasMore = hasMore
-        strongSelf.videos += videos
-        strongSelf.delegate?.videoDataSource(strongSelf, didRetrivedData: videos)
-
-      case .failure:
-        strongSelf.hasMore = false
-      }
+      self?.updateData(with: response)
+      self?.isLoading = false
     }
+  }
+
+  private func updateData(with response: VideoAPIResponsePayload) {
+    switch response {
+    case .success(hasMore: let hasMore, videos: let videos):
+      self.shouldLoadMore = hasMore
+      self.videos += videos
+      delegate?.videoDataSource(self, didRetrivedData: videos)
+
+    case .failure:
+      self.shouldLoadMore = false
+    }
+  }
+
+  private func fetchNextPage() {
+    currentPage += 1
+    fetchData()
   }
 
 }
@@ -87,15 +103,14 @@ extension VideoDataSource: UICollectionViewDelegateFlowLayout {
     delegate?.videoDataSource(self, didSelect: videos[indexPath.row])
   }
 
-
-//  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//    let preloadIndexPadding = 5
-//    if indexPath.row >= resourceCollection.resources.count - preloadIndexPadding {
-//      if resourceCollection.state == .loaded {
-//        resourceCollection.getMore()
-//      }
-//    }
-//  }
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    let preloadIndexPadding = 5
+    if indexPath.row >= videos.count - preloadIndexPadding {
+      if shouldLoadMore && !isLoading {
+        fetchNextPage()
+      }
+    }
+  }
 
 }
 

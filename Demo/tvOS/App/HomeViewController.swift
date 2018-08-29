@@ -12,9 +12,7 @@ import AVKit
 class HomeViewController: UIViewController {
 
   private lazy var dataSource: VideoDataSource = {
-    let dataSource = VideoDataSource()
-    dataSource.delegate = self
-    return dataSource
+    return VideoDataSource(delegate: self)
   }()
 
   private lazy var collectionView: UICollectionView = {
