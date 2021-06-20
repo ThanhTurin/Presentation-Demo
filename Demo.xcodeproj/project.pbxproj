@@ -30,12 +30,6 @@
 		07F7E93021313EAD00CDFD14 /* VideoCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F7E92F21313EAD00CDFD14 /* VideoCollectionViewModel.swift */; };
 		07F7E93121313EAD00CDFD14 /* VideoCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F7E92F21313EAD00CDFD14 /* VideoCollectionViewModel.swift */; };
 		07F7E9352131A24A00CDFD14 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F7E9342131A24900CDFD14 /* VideoCollectionViewCell.swift */; };
-		242B77F4EE1685FBBCDDD0F4 /* Pods_Demo_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B836B19D297955BB8668C0E1 /* Pods_Demo_tvOS.framework */; };
-		418BBC3859F85B13C6F9F964 /* Pods_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3DB763B025AB0FBAE69397 /* Pods_DemoTests.framework */; };
-		48E6DABAE6C6FDFD282B3382 /* Pods_Demo_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA3F3CDEA8F9338B1E0465B /* Pods_Demo_tvOSTests.framework */; };
-		4A14D9FA81A934F5B4DD3CE4 /* Pods_Demo_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D740F76FB8C2F206AD832DF6 /* Pods_Demo_iOSTests.framework */; };
-		8D3B7DF7F7AF0657620FED79 /* Pods_Demo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18589657382C5BEB7B12AD42 /* Pods_Demo_iOS.framework */; };
-		DEAE66D1D2EF6D29CBC4FBEE /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 712E0D57C0B51AF772DA31B8 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,16 +77,10 @@
 		07F7E92C21313D5F00CDFD14 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		07F7E92F21313EAD00CDFD14 /* VideoCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewModel.swift; sourceTree = "<group>"; };
 		07F7E9342131A24900CDFD14 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
-		18589657382C5BEB7B12AD42 /* Pods_Demo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CA3F3CDEA8F9338B1E0465B /* Pods_Demo_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E629E5F541CE6BA3F37343C /* Pods-Demo-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo-iOSTests/Pods-Demo-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		6A1EA906126308530AD904BE /* Pods-Demo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo-iOS/Pods-Demo-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		712E0D57C0B51AF772DA31B8 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A3DB763B025AB0FBAE69397 /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96095ECED13331325422FF55 /* Pods-Demo-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo-tvOSTests/Pods-Demo-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		B836B19D297955BB8668C0E1 /* Pods_Demo_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D80D1A6B6AB0A6E4767BFB /* Pods-Demo-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo-iOSTests/Pods-Demo-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D740F76FB8C2F206AD832DF6 /* Pods_Demo_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7A33101A4EB5E06B70C7A2D /* Pods-Demo-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo-tvOS/Pods-Demo-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		EFD842DFB42995E35AC7C3E9 /* Pods-Demo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo-tvOS/Pods-Demo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		F0CBE5622857C3FC1B8A9A88 /* Pods-Demo-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo-tvOSTests/Pods-Demo-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,8 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEAE66D1D2EF6D29CBC4FBEE /* Pods_Demo.framework in Frameworks */,
-				8D3B7DF7F7AF0657620FED79 /* Pods_Demo_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,8 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				418BBC3859F85B13C6F9F964 /* Pods_DemoTests.framework in Frameworks */,
-				4A14D9FA81A934F5B4DD3CE4 /* Pods_Demo_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +105,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				242B77F4EE1685FBBCDDD0F4 /* Pods_Demo_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48E6DABAE6C6FDFD282B3382 /* Pods_Demo_tvOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,12 +274,6 @@
 		51370649C16325A6DE39DDC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				712E0D57C0B51AF772DA31B8 /* Pods_Demo.framework */,
-				7A3DB763B025AB0FBAE69397 /* Pods_DemoTests.framework */,
-				18589657382C5BEB7B12AD42 /* Pods_Demo_iOS.framework */,
-				D740F76FB8C2F206AD832DF6 /* Pods_Demo_iOSTests.framework */,
-				B836B19D297955BB8668C0E1 /* Pods_Demo_tvOS.framework */,
-				1CA3F3CDEA8F9338B1E0465B /* Pods_Demo_tvOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -471,7 +447,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Demo-iOS/Pods-Demo-iOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Demo-iOS/Pods-Demo-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage-iOS/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS/SwiftyJSON.framework",
@@ -484,7 +460,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo-iOS/Pods-Demo-iOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo-iOS/Pods-Demo-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5E6702537559966C9070704F /* [CP] Check Pods Manifest.lock */ = {
@@ -547,7 +523,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Demo-tvOS/Pods-Demo-tvOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Demo-tvOS/Pods-Demo-tvOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-tvOS/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage-tvOS/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-tvOS/SwiftyJSON.framework",
@@ -560,7 +536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo-tvOS/Pods-Demo-tvOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo-tvOS/Pods-Demo-tvOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F459C2FB5C44EC8379349B8F /* [CP] Check Pods Manifest.lock */ = {
@@ -799,7 +775,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = thanhturin.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thanhturin.wwdc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -819,7 +795,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = thanhturin.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thanhturin.wwdc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
